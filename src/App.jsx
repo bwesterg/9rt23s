@@ -1,33 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import { BsFillTrashFill, BsPencilFill } from 'react-icons/bs';
+import data from "./data.json";
+import Modal from './components/Modal';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState(data);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <div className="table-wrapper">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Staus</th>
+              <th>Sign Up Date</th>
+              <th>Last Login</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map(({ 
+              id, name, email, role, 
+              status, signUpDate, lastLogin 
+            }) => (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{email}</td>
+                <td>
+                  <span className={`label label-${role}`}>
+                    {role}
+                  </span>
+                </td>
+                <td>
+                  <span className={`label label-${status}`}>
+                    {status}
+                  </span>
+                </td>
+                <td>{signUpDate}</td>
+                <td>{lastLogin}</td>
+                <td>
+                  <span className="actions">
+                    <BsFillTrashFill className="delete"/>
+                    <BsPencilFill className="edit"/>
+                  </span>
+                </td>
+              </tr>
+            ))}
+
+          </tbody>
+        </table>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button 
+        className="btn"
+        onClick={()=>setModalOpen(true)}
+      >Add</button>
+      {modalOpen && <Modal closeModal={()=>setModalOpen(false)}/>}
+    </div>
     </>
   )
 }
