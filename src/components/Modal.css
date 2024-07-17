@@ -11,11 +11,6 @@
   background-color: rgba(0,0,0,0.7);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .modal {
   border-radius: 5px;
   padding: 2rem;
@@ -24,11 +19,40 @@ form {
   width: 25em;
 }
 
-input {
-  background-color: white;
-  color: black;
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
+.modal-heading h3 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  color: #1d4ed8;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.top-close {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  transition: 200ms;
+}
+
+.top-close svg{
+  color: gray;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.top-close:hover {
+  transform: scale(1.1);
+}
 
 .modal .btn {
   display: block;
@@ -37,34 +61,33 @@ input {
 
 .form-group {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.id, .name, .email, .role, .status, .signUpDate, .lastLogin {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  /* width: 30%; */
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-  margin-right: 10px;
-  flex: 0;
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding-right: 10px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .form-group input {
-  width: 70%;
-  /* flex: 1; */
-  justify-content: end;
+  flex: 1;
+  max-width: 70%;
 }
 
 .form-group input,
 .form-group select {
-  border: 1px solid rgb(114, 114, 114);
+  border: 2px solid rgb(114, 114, 114);
+  background-color: aliceblue;
+  color: rgb(64, 64, 64);
   border-radius: 0.3rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
   font-size: 1rem;
+  font-weight: 300;
 }
 
 .form-group label {
@@ -78,20 +101,10 @@ input {
   margin: 1rem 0 1rem 0;
 }
 
-.modal-heading {
-  display: flex;
-  justify-content: center;
+.form-group.status .select-option {
+  color: purple;
 }
 
-.top-close {
-  display: flex;
-  justify-content: right;
+.errors {
+  border-radius: 5px;
 }
-
-.top-close svg{
-
-  color: gray;
-  padding: 3px;
-  cursor: pointer;
-}
-

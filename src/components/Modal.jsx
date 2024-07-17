@@ -11,7 +11,7 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState("");
 
-  console.log(defaultValue);
+  console.log(defaultValue.name);
 
   useEffect(() => {
     if (defaultValue) {
@@ -69,13 +69,13 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
       }}
     >
       <div className="modal">
-        <div className="top-close">
-          <IoMdCloseCircleOutline size={35} onClick={()=>closeModal()} />
-        </div>
         <div className="modal-heading">
           <h3>
-            {defaultValue === false ? "Add New User" : "Edit User"}
+            {defaultValue === false ? "ADD NEW USER" : `Editing: ${defaultValue.name}`}
           </h3>
+          <div className="top-close">
+            <IoMdCloseCircleOutline size={25} onClick={()=>closeModal()} />
+          </div>
         </div>
         <form>
           <div className="form-group id">
@@ -109,7 +109,7 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
               value={formState.role}
               onChange={handleChange} 
             >
-              <option value="">Select Role</option>
+              <option value="">Select</option>
               <option value="User">User</option>
               <option value="Admin">Admin</option>
               <option value="Manager">Manager</option>
@@ -122,7 +122,7 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
               value={formState.status}
               onChange={handleChange}
             >
-              <option value="">Select Status</option>
+              <option value="">Select</option>
               <option value="Active">Active</option>
               <option value="Pending">Pending</option>
               <option value="Inactive">Inactive</option>
@@ -151,10 +151,10 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
           }
           <button 
             type="submit" 
-            className="btn"
+            className="btn add-save"
             onClick={handleSubmit}  
           >
-            {defaultValue === false ? "Add" : "Save Changes"}
+            {defaultValue === false ? "SAVE NEW USER" : "SAVE CHANGES"}
           </button>
         </form>
       </div>
