@@ -8,7 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.7);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal {
@@ -36,9 +41,27 @@ input {
   margin-bottom: 1rem;
 }
 
+.id, .name, .email, .role, .status, .signUpDate, .lastLogin {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  /* width: 30%; */
+}
+
+.form-group label {
+  margin-right: 10px;
+  flex: 0;
+}
+
+.form-group input {
+  width: 70%;
+  /* flex: 1; */
+  justify-content: end;
+}
+
 .form-group input,
 .form-group select {
-  border: 1px solid black;
+  border: 1px solid rgb(114, 114, 114);
   border-radius: 0.3rem;
   padding: 0.3rem;
   font-size: 1rem;
@@ -47,3 +70,28 @@ input {
 .form-group label {
   margin-bottom: 0.2rem;
 }
+
+.errors {
+  background-color: rgb(253, 216, 216);
+  color: red;
+  padding: 1rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: center;
+}
+
+.top-close {
+  display: flex;
+  justify-content: right;
+}
+
+.top-close svg{
+
+  color: gray;
+  padding: 3px;
+  cursor: pointer;
+}
+

@@ -12,17 +12,17 @@
 }
 
 .table {
-  display: block;
+  /* display: block; */
   overflow: hidden;
   table-layout: auto;
   border-collapse: collapse;
-  box-shadow: 0px 10px 10px #ccc;
+  box-shadow: 0px 2px 11px 0px #6786dc;
   border-radius: 10px;
   white-space: nowrap;
   width: 100em;
   max-width: 80%;
   margin: auto;
-  overflow-x: auto;
+  /* overflow-x: auto; */
 }
 
 .table thead {
@@ -40,8 +40,16 @@
   text-overflow: ellipsis;
 }
 
+tr {
+  text-align: center;
+}
+
+/* tr:hover {
+  transform: scale(1.05);
+} */
+
 .table tbody tr:hover {
-  background-color: #eee;
+  background-color: #6f6f6f;
 }
 
 .label {
@@ -64,11 +72,25 @@
 }
 
 .delete {
-  color: #e10d05;
+  color: #d66763;
+  transition: 200ms;
 }
 
 .edit {
-  color: rgb(234, 234, 196);
+  color: rgb(113, 225, 109);
+  transition: 200ms;
+}
+
+.edit:hover {
+  transform: scale(1.3);
+}
+
+.delete:hover {
+  transform: scale(1.5);
+}
+
+.delete:hover {
+  color: red;
 }
 
 .btn {
@@ -79,7 +101,11 @@
   padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0px 5px 5px #ccc;
+  box-shadow: 0px 2px 11px 0px #6786dc;
+}
+
+.btn:hover {
+  border: 2px solid #1d4ed8;
 }
 
 /* Custom styles above */
