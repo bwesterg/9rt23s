@@ -12,7 +12,7 @@ function App() {
   const handleEditRow = (index) => {
     setEditRowIndex(index);
     setModalOpen(true);
-  }
+  };
 
   const handleDeleteRow = (id) => {
     const filtered = users.filter((user) => user.id !== id);
@@ -107,6 +107,6 @@ function App() {
       </div>
     </>
   )
-}
+};
 
 export default App;
