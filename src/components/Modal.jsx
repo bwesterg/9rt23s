@@ -11,8 +11,6 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState("");
 
-  console.log(defaultValue.name);
-
   useEffect(() => {
     if (defaultValue) {
       setFormState(defaultValue);
@@ -160,6 +158,6 @@ const Modal = ({ closeModal, onSubmit, defaultValue }) => {
       </div>
     </div>
   )
-}
+};
 
 export default Modal;
