@@ -91,9 +91,9 @@ function App() {
           </table>
         </div>
         <button
-          className="btn"
+          className="btn add-user"
           onClick={() => setModalOpen(true)}
-        >Add</button>
+        >ADD USER</button>
         {modalOpen &&
           <Modal
             closeModal={() => {
