@@ -71,17 +71,19 @@ function App() {
                   <td>{lastLogin}</td>
                   <td>
                     <span className="actions">
-                      <BsFillTrashFill
-                        className="delete"
-                        onClick={() => handleDeleteRow(id)}
-                        alt="delete button"
-                        aria-label="delete row"
-                      />
+                 
                       <BsPencilFill
                         className="edit"
                         onClick={() => handleEditRow(index)}
                         alt="delete edit"
                         aria-label="edit row"
+                      />
+                       
+                      <BsFillTrashFill
+                        className="delete"
+                        onClick={() => handleDeleteRow(id)}
+                        alt="delete button"
+                        aria-label="delete row"
                       />
                     </span>
                   </td>
